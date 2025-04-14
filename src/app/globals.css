@@ -115,3 +115,16 @@ p {
   font-size: 1rem;
   line-height: 1.75rem;
 }
+
+a.zoom-link,
+a.footer-link {
+  color: #1d4ed8;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover, a.zoom-link:hover,
+a.footer-link:hover {
+  color: #737ea2;
+}
+
