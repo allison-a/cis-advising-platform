@@ -1,3 +1,10 @@
+'use client';
+import { resources } from '../lib/resources_data';
+import Link from 'next/link';
+
+const featured = ['engineering-handbook', 'course-plan', 'student-center'];
+const featuredResources = resources.filter(r => featured.includes(r.id));
+
 export default function HomePage() {
   return (
     <main className="w-full px-6 py-6">
@@ -44,49 +51,48 @@ export default function HomePage() {
       <div className="h-8 w-full"></div>
 
       {/* Featured Resources Section */}
-      <section className="space-y-6 mb-16">
-        <h2 className="text-2xl font-bold text-red-700">Featured Resources</h2>
-        <p className="text-gray-700">Popular tools and resources for academic planning</p>
+      {/* Featured Resources Section */}
+<section className="space-y-6 mb-16">
+  <h2 className="text-2xl font-bold text-red-700">Featured Resources</h2>
+  <p className="text-gray-700">Popular tools and resources for academic planning</p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-          {/* Resource 1 */}
-          <div className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
-            <h3 className="text-lg font-semibold text-red-600">Engineering Handbook</h3>
-            <p className="text-sm mt-1 text-gray-600">
-              Comprehensive guide to CIS engineering program requirements and policies.
-            </p>
-            <a href="/resources/handbook" className="text-sm font-medium mt-2 inline-block">
-              Access Resource →
-            </a>
-          </div>
+  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+    {featuredResources.map(resource => (
+      <div
+        key={resource.id}
+        className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition"
+      >
+        <h3 className="text-lg font-semibold text-red-600">{resource.title}</h3>
+        <p className="text-sm mt-1 text-gray-600">{resource.description}</p>
 
-          {/* Resource 2 */}
-          <div className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
-            <h3 className="text-lg font-semibold text-red-600">CoursePlan</h3>
-            <p className="text-sm mt-1 text-gray-600">
-              Interactive tool to plan your courses and track degree requirements.
-            </p>
-            <a href="/resources/courseplan" className="text-sm font-medium mt-2 inline-block">
-              Access Resource →
-            </a>
-          </div>
+        {resource.isExternal ? (
+          <a
+            href={resource.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 underline hover:text-blue-800 mt-2 inline-block"
+          >
+            Access Resource →
+          </a>
+        ) : (
+          <Link
+            href={resource.url}
+            className="text-sm text-blue-600 underline hover:text-blue-800 mt-2 inline-block"
+          >
+            Access Resource →
+          </Link>
+        )}
+      </div>
+    ))}
+  </div>
 
-          {/* Resource 3 */}
-          <div className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
-            <h3 className="text-lg font-semibold text-red-600">Student Center</h3>
-            <p className="text-sm mt-1 text-gray-600">
-              Enroll in classes, view your schedule, and access financial information.
-            </p>
-            <a href="https://studentcenter.cornell.edu" target="_blank" rel="noopener noreferrer" className="text-sm font-medium mt-2 inline-block">
-              Access Resource →
-            </a>
-          </div>
-        </div>
+  <div className="text-center pt-6">
+    <Link href="/resources" className="footer-link">
+      Browse All Resources
+    </Link>
+  </div>
+</section>
 
-        <div className="text-center pt-6">
-          <a href="/resources" className="footer-link">Browse All Resources</a>
-        </div>
-      </section>
 
 
        {/* Spacer */}
