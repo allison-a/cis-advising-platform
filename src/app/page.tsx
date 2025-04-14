@@ -51,48 +51,46 @@ export default function HomePage() {
       <div className="h-8 w-full"></div>
 
       {/* Featured Resources Section */}
-      {/* Featured Resources Section */}
-<section className="space-y-6 mb-16">
-  <h2 className="text-2xl font-bold text-red-700">Featured Resources</h2>
-  <p className="text-gray-700">Popular tools and resources for academic planning</p>
+      <section className="space-y-6 mb-16">
+        <h2 className="text-2xl font-bold text-red-700">Featured Resources</h2>
+        <p className="text-gray-700">Popular tools and resources for academic planning</p>
 
-  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-    {featuredResources.map(resource => (
-      <div
-        key={resource.id}
-        className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition"
-      >
-        <h3 className="text-lg font-semibold text-red-600">{resource.title}</h3>
-        <p className="text-sm mt-1 text-gray-600">{resource.description}</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+          {featuredResources.map(resource => (
+            <div
+              key={resource.id}
+              className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition"
+            >
+              <h3 className="text-lg font-semibold text-red-600">{resource.title}</h3>
+              <p className="text-sm mt-1 text-gray-600">{resource.description}</p>
 
-        {resource.isExternal ? (
-          <a
-            href={resource.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-blue-600 underline hover:text-blue-800 mt-2 inline-block"
-          >
-            Access Resource →
-          </a>
-        ) : (
-          <Link
-            href={resource.url}
-            className="text-sm text-blue-600 underline hover:text-blue-800 mt-2 inline-block"
-          >
-            Access Resource →
+              {resource.isExternal ? (
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-600 underline hover:text-blue-800 mt-2 inline-block"
+                >
+                  Access Resource →
+                </a>
+              ) : (
+                <Link
+                  href={resource.url}
+                  className="text-sm text-blue-600 underline hover:text-blue-800 mt-2 inline-block"
+                >
+                  Access Resource →
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center pt-6">
+          <Link href="/resources" className="footer-link">
+            Browse All Resources
           </Link>
-        )}
-      </div>
-    ))}
-  </div>
-
-  <div className="text-center pt-6">
-    <Link href="/resources" className="footer-link">
-      Browse All Resources
-    </Link>
-  </div>
-</section>
-
+        </div>
+      </section>
 
 
        {/* Spacer */}
@@ -100,7 +98,7 @@ export default function HomePage() {
 
       {/* Advisor Section */}
       <section className="w-full">
-        <div className="border border-gray-300 rounded-xl p-6 bg-white shadow">
+        <div className="border border-gray-300 rounded-xl p-6 bg-[#ebcbcb] shadow">
           <h2 className="text-2xl font-bold text-red-700 mb-2">Find Your Advisor</h2>
           <p className="text-gray-700 mb-8">Connect with your assigned academic advisor</p>
 

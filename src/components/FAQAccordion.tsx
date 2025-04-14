@@ -23,28 +23,33 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
     //Buttons dont work
     <section className="w-screen flex flex-col items-center">
       {/* Filter Buttons */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        {categories.map(category => (
-          <button
-            key={category}
-            className={`px-4 py-2 rounded-full border transition ${
-              selectedCategory === category
-                ? 'bg-red-700 text-white'
-                : 'bg-white text-red-700 border-red-700 hover:bg-red-50'
-            }`}
-            onClick={() => {
-                console.log('Selected:', category);
-                setSelectedCategory(category);
-              }}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-center gap-3 mb-6">
+        {categories.map(category => {
+            const isActive = selectedCategory === category;
+            return (
+            <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`appearance-none px-4 py-2 rounded-full border text-sm font-semibold transition duration-200 outline-none focus:ring-2 focus:ring-red-400
+                    ${
+                      isActive
+                        ? 'bg-red-700 text-white border-white'
+                        : 'bg-white text-red-700 border-white hover:bg-[#e9d0d0] hover:shadow-[0_0_12px_4px_rgba(185,28,28,0.35)]'
+                    }`}
+                  
+            >
+                {category}
+            </button>
+            );
+        })}
+        </div>
+
+
+
 {/*       
     <section className="w-screen flex justify-center"> */}
       <div className="w-full max-w-screen-lg px-4 space-y-4">
-        {faqs.map(({ id, question, answer }) => (
+        {filteredFaqs.map(({ id, question, answer }) => (
           <div key={id} className="border border-gray-200 rounded-lg overflow-hidden">
             <button
               onClick={() => toggle(id)}

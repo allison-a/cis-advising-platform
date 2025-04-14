@@ -1,50 +1,64 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
+/* ===== Root Theme ===== */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #8a5555;
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --cornell-red: 179, 27, 27; /* Cornell Red */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
   }
 }
 
+/* ===== Body/Base Styling ===== */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
-  --cornell-red: 179, 27, 27; /* Cornell University red */
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-}
-
-/* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom styles for scrollbars */
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #cd1d1a; /* slightly different Cornell red */
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem; /* text-2xl */
+  line-height: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #0a0e01;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+/* ===== Scrollbar Styling ===== */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -64,13 +78,46 @@ html {
   background: rgb(139, 137, 123);
 }
 
-/* Focus styles for accessibility */
+/* ===== Focus Rings (Accessible, But Less Intrusive) ===== */
 *:focus-visible {
-  outline: 2px solid rgb(var(--cornell-red));
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--cornell-red), 0.5);
 }
 
-/* Custom animation for page transitions */
+/* You can remove this if you don't want any global ring at all:
+*:focus-visible {
+  outline: none;
+}
+*/
+
+button:focus-visible {
+  outline: 2px solid rgba(179, 27, 27, 0.5); /* subtle Cornell red ring */
+  border-radius: 8px;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* ===== Link Styles ===== */
+a.zoom-link,
+a.footer-link {
+  color: #1d4ed8;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+.zoom-link:hover,
+.footer-link:hover {
+  color: #737ea2;
+}
+
+/* ===== Page Animation ===== */
+main {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -79,52 +126,3 @@ html {
     opacity: 1;
   }
 }
-
-main {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-/* Simulate Tailwind base layer (fallback) */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;  
-  color: #cd1d1a; 
-  margin-bottom: 0.5rem;
-}
-
-h1 {
-  font-size: 2.25rem; /* text-4xl */
-  color: #cd1d1a;
-  line-height: 2.5rem;
-}
-
-h2 {
-  font-size: 1.875rem; /* text-3xl */
-  color: #cd1d1a;
-  line-height: 2.25rem;
-}
-
-h3 {
-  font-size: 1.5rem; /* text-2xl */
-  color: #cd1d1a;
-  line-height: 2rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: #0a0e01; /* text-gray-700 */
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-a.zoom-link,
-a.footer-link {
-  color: #1d4ed8;
-  text-decoration: underline;
-  transition: color 0.2s ease-in-out;
-}
-
-a:hover, a.zoom-link:hover,
-a.footer-link:hover {
-  color: #737ea2;
-}
-
