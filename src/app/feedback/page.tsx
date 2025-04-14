@@ -48,7 +48,7 @@ export default function FeedbackPage() {
 
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-10">
+    <main className="w-screen flex flex-col items-center px-4 pb-16">
       <h1 className="text-3xl font-bold text-red-700 mb-2">Submit Your Feedback</h1>
       <p className="text-gray-700 mb-8">
         Use this form to submit feedback, suggestions, or petition requests related to CIS advising
