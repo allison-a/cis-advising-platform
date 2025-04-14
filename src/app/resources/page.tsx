@@ -13,7 +13,7 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
   const { title, description, url, isExternal } = resource;
 
   return (
-    <div className="p-4 bg-[#e8e7e5] rounded-xl border border-gray-300 shadow hover:bg-white transition">
+    <div className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
       <h3 className="text-lg font-semibold text-red-700">{title}</h3>
       <p className="text-sm text-gray-700 mt-1">{description}</p>
       {isExternal ? (

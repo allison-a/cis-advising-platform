@@ -25,22 +25,22 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold text-red-700">Quick Access</h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-          <a href="/advising" className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
+          <a href="/advising" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
             <h2 className="text-xl font-semibold text-red-600">Advising Contacts →</h2>
             <p className="text-sm mt-1 text-gray-600">Find advisors by department or major.</p>
           </a>
 
-          <a href="/course-planning" className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
+          <a href="/course-planning" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
             <h2 className="text-xl font-semibold text-red-600">Course Planning →</h2>
             <p className="text-sm mt-1 text-gray-600">Access tools and templates to plan your degree.</p>
           </a>
 
-          <a href="/faq" className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
+          <a href="/faq" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
             <h2 className="text-xl font-semibold text-red-600">FAQs →</h2>
             <p className="text-sm mt-1 text-gray-600">Quick answers to common advising questions.</p>
           </a>
 
-          <a href="/feedback" className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition">
+          <a href="/feedback" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
             <h2 className="text-xl font-semibold text-red-600">Feedback →</h2>
             <p className="text-sm mt-1 text-gray-600">Submit concerns, petitions or suggestions.</p>
           </a>
@@ -59,7 +59,7 @@ export default function HomePage() {
           {featuredResources.map(resource => (
             <div
               key={resource.id}
-              className="p-4 bg-[#e8e7e5] shadow rounded-xl border border-gray-300 hover:bg-white transition"
+              className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition"
             >
               <h3 className="text-lg font-semibold text-red-600">{resource.title}</h3>
               <p className="text-sm mt-1 text-gray-600">{resource.description}</p>
@@ -98,7 +98,7 @@ export default function HomePage() {
 
       {/* Advisor Section */}
       <section className="w-full">
-        <div className="border border-gray-300 rounded-xl p-6 bg-[#ebcbcb] shadow">
+        <div className="border border-gray-300 rounded-xl p-6 bg-red-100 shadow">
           <h2 className="text-2xl font-bold text-red-700 mb-2">Find Your Advisor</h2>
           <p className="text-gray-700 mb-8">Connect with your assigned academic advisor</p>
 
