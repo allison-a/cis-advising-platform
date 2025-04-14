@@ -38,7 +38,7 @@ export default function ResourcesPage() {
   const grouped = getResourcesByCategory();
 
   return (
-    <main className="w-full px-6 py-10 space-y-12">
+    <main className="w-screen px-6 py-10 space-y-12">
       <h1 className="text-3xl font-bold text-red-700 mb-2">All Resources</h1>
       <p className="text-gray-700 mb-8">Explore helpful academic tools, services, and forms for your success.</p>
 
