@@ -21,7 +21,6 @@ export default function FeedbackPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Need to find right emails/recipients
     const recipientMap: Record<string, string> = {
       'Advising Experience Feedback': 'advising@cornell.edu',
       'Petition Request': 'petitions@cornell.edu',
@@ -36,7 +35,6 @@ export default function FeedbackPage() {
       recipient: recipientMap[feedbackType],
     };
 
-    // Replace this with your real endpoint (or EmailJS, etc)
     await fetch('/api/submit-feedback', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -46,7 +44,6 @@ export default function FeedbackPage() {
     alert('Feedback submitted!');
   };
 
-
   return (
     <main className="w-screen flex flex-col items-center px-4 pb-16">
       <h1 className="text-3xl font-bold text-red-700 mb-2">Submit Your Feedback</h1>
@@ -54,11 +51,16 @@ export default function FeedbackPage() {
         Use this form to submit feedback, suggestions, or petition requests related to CIS advising
       </p>
 
-      <form className="space-y-6 bg-white p-6 rounded-xl shadow-md">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-xl shadow-md w-full max-w-2xl">
         {/* Feedback Type */}
         <div>
           <label className="block font-medium mb-1">Feedback Type<span className="text-red-600">*</span></label>
-          <select className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition">
+          <select
+            name="feedbackType"
+            value={feedbackType}
+            onChange={(e) => setFeedbackType(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
+          >
             <option>Advising Experience Feedback</option>
             <option>Petition Request</option>
             <option>Website/Tool Bug</option>
@@ -84,28 +86,37 @@ export default function FeedbackPage() {
             <div>
               <label className="block font-medium mb-1">Name<span className="text-red-600">*</span></label>
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 type="text"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
-               />   
+              />
             </div>
 
             {/* Email */}
             <div>
               <label className="block font-medium mb-1">Email<span className="text-red-600">*</span> <span className="text-sm text-gray-500">(Cornell email preferred)</span></label>
               <input
-                type="text"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
-               />   
+              />
             </div>
 
             {/* NetID */}
             <div>
-              <label className="block font-medium mb-1">Cornell Student ID<span className="text-red-600">*</span></label>
+              <label className="block font-medium mb-1">Cornell Student NetID<span className="text-red-600">*</span></label>
               <input
+                name="netid"
+                value={formData.netid}
+                onChange={handleChange}
                 type="text"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
-               />
-</div>
+              />
+            </div>
           </>
         )}
 
@@ -113,7 +124,9 @@ export default function FeedbackPage() {
         <div>
           <label className="block font-medium mb-1">Subject<span className="text-red-600">*</span></label>
           <input
-
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
             type="text"
             className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
             placeholder="Brief description of your feedback"
@@ -125,6 +138,9 @@ export default function FeedbackPage() {
         <div>
           <label className="block font-medium mb-1">Message<span className="text-red-600">*</span></label>
           <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             rows={6}
             className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
             placeholder="Please provide details about your feedback, suggestion, or petition request"

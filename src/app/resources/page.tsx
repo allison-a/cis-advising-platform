@@ -1,4 +1,4 @@
-// app/resources/page.tsx
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 'use client';
 
