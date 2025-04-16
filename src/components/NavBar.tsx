@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <nav className="w-full bg-white border-b shadow-sm px-6 py-4">
       <div className="w-full flex justify-between items-center px-6">
-        <span className="text-xl font-bold text-red-700">CIS Advising</span>
+        <span className="text-xl font-bold text-red-700">CISConnect</span>
         <ul className="flex gap-6 text-sm font-medium text-gray-700">
           {navItems.map((item) => (
             <li key={item.path}>
