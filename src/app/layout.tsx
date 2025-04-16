@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 
 export const metadata: Metadata = {
-  title: 'CIS Advising Resource Platform',
+  title: 'CISConnect',
   description: 'Cornell CIS centralized advising resource hub',
 };
 

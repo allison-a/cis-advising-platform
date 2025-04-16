@@ -27,10 +27,11 @@ npm install
 yarn install
 
 To start the dev server:
-bash
+```bash
 npm run dev
 # or
 yarn dev
+```
 
 Then open your browser to:
 arduino

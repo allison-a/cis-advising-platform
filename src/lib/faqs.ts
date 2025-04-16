@@ -9,13 +9,13 @@ export interface FAQ {
     {
       id: '1',
       question: 'How do I schedule an advising appointment?',
-      answer: 'Visit the “Advising Contacts” page and click on the scheduling link for your advisor.',
+      answer: 'Schedule an appointment at https://cornell1.my.site.com/cu/s/appointments',
       category: 'advising',
     },
     {
       id: '2',
       question: 'What courses are required for the CIS major?',
-      answer: 'Check the Engineering Handbook and CoursePlan tool for up-to-date requirements.',
+      answer: 'Check the Engineering Handbook and CoursePlan tool on the "Course Planning" page for up-to-date requirements.',
       category: 'course',
     },
     {
