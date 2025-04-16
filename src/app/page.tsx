@@ -25,10 +25,10 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold text-red-700">Quick Access</h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-          <a href="/advising" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
+          {/* <a href="/advising" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
             <h2 className="text-xl font-semibold text-red-600">Advising Contacts →</h2>
             <p className="text-sm mt-1 text-gray-600">Find advisors by department or major.</p>
-          </a>
+          </a> */}
 
           <a href="/course-planning" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
             <h2 className="text-xl font-semibold text-red-600">Course Planning →</h2>
