@@ -58,10 +58,12 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Spacer */}
+      <div className="h-8 w-full"></div>
 
       {/* Quick Access Section */}
       <section className="space-y-6 mb-16">
-        <h2 className="text-2xl font-bold text-red-700">Quick Access</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-red-700 tracking-wide uppercase bg-[#fceeee] px-4 py-2 rounded-md shadow-sm inline-block"> 🚀 Quick Access </h2> 
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
           {/* <a href="/advising" className="block border border-gray-200 rounded-xl bg-white p-5 shadow-sm hover:bg-red-50 hover:shadow-md transition">
@@ -91,8 +93,8 @@ export default function HomePage() {
 
       {/* Featured Resources Section */}
       <section className="space-y-6 mb-16">
-        <h2 className="text-2xl font-bold text-red-700">Featured Resources</h2>
-        <p className="text-gray-700">Popular tools and resources for academic planning</p>
+      <h2 className="text-xl sm:text-2xl font-bold text-red-700 tracking-wide uppercase bg-[#fceeee] px-4 py-2 rounded-md shadow-sm inline-block"> 📌 Featured Resources </h2> 
+      <p className="text-gray-700">Popular tools and resources for academic planning</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
           {featuredResources.map(resource => (
@@ -138,7 +140,7 @@ export default function HomePage() {
       {/* Advisor Section */}
       <section className="w-full">
         <div className="border border-gray-300 rounded-xl p-6 bg-[#f2e3df] shadow">
-          <h2 className="text-2xl font-bold text-red-700 mb-2">Find Your Advisor</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-red-700 tracking-wide uppercase px-4 py-2 rounded-md"> 👨‍🏫 Find Your Advisor</h2>
           <p className="text-gray-700 mb-8">Connect with your assigned academic advisor</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
