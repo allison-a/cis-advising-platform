@@ -5,7 +5,6 @@ import {
   BookOpenCheck,
   Puzzle,
   ExternalLink,
-  ClipboardList,
   School,
   ShieldCheck
 } from 'lucide-react';
