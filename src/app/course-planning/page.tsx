@@ -20,12 +20,13 @@ export default function CoursePlanningPage() {
   return (
     <main className="w-screen max-w-5xl mx-auto px-4 py-10 space-y-16 text-gray-800">
       {/* Overview / Description Section */}
-      <section className="space-y-10">
-        <h1 className="text-3xl font-bold text-red-700 text-center">CS Degree Requirements Overview</h1>
-        <p className="text-center max-w-3xl mx-auto text-gray-700">
-          The Computer Science major equips students with a strong foundation in programming, systems, algorithms, and theoretical CS. Customize your path through electives, technical courses, and specialization options.
-        </p>
-
+      <section className="w-screen px-6 py-6">
+        <div className="text-center px-4">
+          <h1 className="text-3xl font-bold text-red-700">CS Degree Requirements Overview</h1>
+          <p className="text-gray-700">
+            The Computer Science major equips students with a strong foundation in programming, systems, algorithms, and theoretical CS. Customize your path through electives, technical courses, and specialization options.
+          </p>
+        </div>
         <div className="w-screen grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
           {/* Calculus & Intro */}
           <div className="rounded-xl border p-5 bg-white shadow-sm">
@@ -89,7 +90,7 @@ export default function CoursePlanningPage() {
         </div>
 
         {/* Integrity Box */}
-        <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-xl text-sm text-gray-800">
+        <div className="w-screen bg-red-50 border-l-4 border-red-500 p-5 rounded-xl text-sm text-gray-800">
           <div className="flex items-center gap-2 mb-2">
             <ShieldCheck className="w-5 h-5 text-red-700" />
             <span className="font-semibold text-red-700">Academic Integrity Reminder</span>
@@ -109,7 +110,7 @@ export default function CoursePlanningPage() {
           These tools help you plan your schedule, track progress, and explore Cornell CIS offerings.
         </p>
 
-        <div className="w-screen \grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="w-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {coursePlanningResources.map(({ id, title, description, url, isExternal }) => (
             <a
               key={id}

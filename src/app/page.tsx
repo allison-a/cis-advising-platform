@@ -24,31 +24,31 @@ export default function HomePage() {
         <div className="bg-[#f2e3df] border border-gray-200 rounded-2xl shadow p-8 space-y-6">
           <h2 className="text-2xl md:text-3xl font-bold text-red-700 text-center">What is the CIS Advising Resource Platform?</h2>
           
-          <p className="text-gray-800 text-md md:text-lg text-center max-w-3xl mx-auto">
+          <p className="text-gray-800 text-md md:text-lg text-center">
             A centralized platform built to empower Cornell CIS students with tools and guidance for academic success —
             from connecting with advisors to planning your courses and submitting feedback.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
               <h3 className="text-lg font-semibold text-red-600 mb-2">🔍 Find Your Advisor</h3>
               <p className="text-gray-700 text-sm">
                 Quickly locate your assigned academic advisor by major or NetID range, and view their office hours.
               </p>
             </div>
-            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
               <h3 className="text-lg font-semibold text-red-600 mb-2">📅 Plan Your Courses</h3>
               <p className="text-gray-700 text-sm">
                 Access course planning tools, track your degree progress, and explore official course rosters.
               </p>
             </div>
-            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
               <h3 className="text-lg font-semibold text-red-600 mb-2">❓ Get Quick Answers</h3>
               <p className="text-gray-700 text-sm">
                 Use the searchable FAQ section to find answers to common academic and policy-related questions.
               </p>
             </div>
-            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
               <h3 className="text-lg font-semibold text-red-600 mb-2">📬 Submit Feedback or Petitions</h3>
               <p className="text-gray-700 text-sm">
                 Send suggestions, report issues, or submit official petition requests directly to the advising team.
