@@ -110,7 +110,7 @@ export default function CoursePlanningPage() {
           These tools help you plan your schedule, track progress, and explore Cornell CIS offerings.
         </p>
 
-        <div className="w-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="w-screen \grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {coursePlanningResources.map(({ id, title, description, url, isExternal }) => (
             <a
               key={id}
