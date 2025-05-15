@@ -16,14 +16,14 @@ export default function NavBar() {
   return (
     <nav className="w-full bg-white border-b shadow-sm px-6 py-4">
       <div className="w-full flex justify-between items-center px-6">
-        <span className="text-xl font-bold text-red-700">CISConnect</span>
-        <ul className="flex gap-6 text-sm font-medium text-gray-700">
+        <span className="text-3xl font-extrabold text-red-700 tracking-tight">CISConnect</span>
+        <ul className="flex gap-8 text-xl font-semibold text-gray-700">
           {navItems.map((item) => (
             <li key={item.path}>
               <Link
                 href={item.path}
-                className={`hover:text-red-600 ${
-                  pathname === item.path ? 'text-red-600 font-semibold' : ''
+                className={`hover:text-red-600 transition-colors duration-150 ${
+                  pathname === item.path ? 'text-red-600 font-bold' : ''
                 }`}
               >
                 {item.name}
