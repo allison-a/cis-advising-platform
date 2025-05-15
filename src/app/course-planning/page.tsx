@@ -30,66 +30,59 @@ export default function CoursePlanningPage() {
       </section>
 
       {/* Degree Summary Cards */}
-      <section className="w-screen grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Calculus + Intro */}
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-3 text-red-700 mb-3">
-            <GraduationCap className="w-6 h-6" />
-            <h2 className="text-xl font-bold">Calculus + Intro Programming</h2>
+      <section className="w-screen grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-8xl mx-auto">
+        {[
+          {
+            title: 'Calculus + Intro Programming',
+            icon: <GraduationCap className="w-6 h-6" />,
+            bullets: [
+              'A&S: Math 1110 → 1120 → 2210',
+              'ENGR: Math 1910 → 1920 → 2940',
+              'CS 1110 or 1112',
+              'CS 2110/2112 or ECE 2400/ENGRD 2140',
+            ],
+          },
+          {
+            title: 'Core CS Courses',
+            icon: <BookOpenCheck className="w-6 h-6" />,
+            bullets: [
+              'CS 2800, 3110, 3410 / 3420',
+              'CS 4410 / 4414, CS 4820',
+              '3 electives 4000+ (no 4090/4998/4999)',
+              '+ CS 3700 or 3780 (Fall 2024+)',
+              '2 electives 4000+ (if not core)',
+            ],
+          },
+          {
+            title: 'Projects & Technicals',
+            icon: <Puzzle className="w-6 h-6" />,
+            bullets: [
+              '1 Practicum or project course',
+              '3 Technical electives (3000+)',
+              '3 External Specializations (non-CS)',
+              'Major-Approved electives (≥3 credits)',
+            ],
+          },
+          {
+            title: 'Degrees & Notes',
+            icon: <School className="w-6 h-6" />,
+            bullets: [
+              'B.S. – College of Engineering',
+              'B.A. – College of Arts & Sciences',
+              'Same value for jobs & grad school',
+            ],
+          },
+        ].map(({ title, icon, bullets }) => (
+          <div key={title} className="resource-card space-y-3">
+            <div className="flex items-center gap-3 text-red-700">
+              {icon}
+              <h2 className="font-bold">{title}</h2>
+            </div>
+            <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+              {bullets.map((b) => <li key={b}>{b}</li>)}
+            </ul>
           </div>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>A&S: Math 1110 → 1120 → 2210</li>
-            <li>ENGR: Math 1910 → 1920 → 2940</li>
-            <li>CS 1110 or 1112</li>
-            <li>CS 2110/2112 or ECE 2400/ENGRD 2140</li>
-          </ul>
-        </div>
-
-        {/* Core CS */}
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-3 text-red-700 mb-3">
-            <BookOpenCheck className="w-6 h-6" />
-            <h2 className="text-xl font-bold">Core CS Courses</h2>
-          </div>
-          <p className="text-sm mb-2 text-gray-600">Pre-Fall 2024:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>CS 2800, 3110, 3410 / 3420</li>
-            <li>CS 4410 / 4414, CS 4820</li>
-            <li>3 electives 4000+ (no 4090/4998/4999)</li>
-          </ul>
-          <p className="text-sm mt-4 mb-2 text-gray-600">Fall 2024+:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>+ CS 3700 or 3780</li>
-            <li>2 electives 4000+ (if not core)</li>
-          </ul>
-        </div>
-
-        {/* Practicum / Techs */}
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-3 text-red-700 mb-3">
-            <Puzzle className="w-6 h-6" />
-            <h2 className="text-xl font-bold">Projects & Technicals</h2>
-          </div>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>1 Practicum or project course</li>
-            <li>3 Technical electives (3000+)</li>
-            <li>3 External Specializations (non-CS)</li>
-            <li>Major-Approved electives (≥3 credits)</li>
-          </ul>
-        </div>
-
-        {/* Degrees */}
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-3 text-red-700 mb-3">
-            <School className="w-6 h-6" />
-            <h2 className="text-xl font-bold">Degrees & Notes</h2>
-          </div>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>B.S. – College of Engineering</li>
-            <li>B.A. – College of Arts & Sciences</li>
-            <li>Same value for jobs & grad school</li>
-          </ul>
-        </div>
+        ))}
       </section>
 
       {/* Integrity Notice */}
@@ -106,48 +99,49 @@ export default function CoursePlanningPage() {
 
       {/* New Vectors Section */}
       <section>
-        <h2 className="text-2xl font-bold text-red-700 mb-4 flex items-center gap-2">
-          <Compass className="w-6 h-6 text-red-700" /> Explore Elective Vectors
-        </h2>
-        <p className="text-gray-700 mb-6">
-          Vectors are curated paths of electives to help you explore a specialty in depth. Not required, but great for customizing your CS journey.
-        </p>
+  <h2 className="text-2xl font-bold text-red-700 mb-4 flex items-center gap-2">
+    <Compass className="w-6 h-6 text-red-700" /> Explore Elective Vectors
+  </h2>
+  <p className="text-gray-700 mb-6">
+    Vectors are curated paths of electives to help you explore a specialty in depth. Not required, but great for customizing your CS journey.
+  </p>
 
-        <div className="w-screen grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-          <div className="bg-white p-5 rounded-xl border shadow-sm">
-            <h3 className="text-lg font-semibold text-red-700">🧠 Artificial Intelligence</h3>
-            <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-              <li>CS 3700 + AI Practicum</li>
-              <li>ML/NLP elective (e.g. CS 4740, 4780)</li>
-              <li>Human intelligence or decision theory</li>
-            </ul>
-          </div>
-          <div className="bg-white p-5 rounded-xl border shadow-sm">
-            <h3 className="text-lg font-semibold text-red-700">🔢 Computational Science</h3>
-            <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-              <li>CS 4210 + 4220 (numerical methods)</li>
-              <li>Math-focused electives (e.g. MATH 4200)</li>
-              <li>4+ credits of low-level programming (CS 2022, 2043)</li>
-            </ul>
-          </div>
-          <div className="bg-white p-5 rounded-xl border shadow-sm">
-            <h3 className="text-lg font-semibold text-red-700">🖼 Graphics & Vision</h3>
-            <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-              <li>CS 4620/4670 + Practicum</li>
-              <li>ML or Game Dev electives</li>
-              <li>Art, visual perception courses (optional)</li>
-            </ul>
-          </div>
-          <div className="bg-white p-5 rounded-xl border shadow-sm">
-            <h3 className="text-lg font-semibold text-red-700">🌐 Network Science</h3>
-            <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-              <li>CS 2850 + INFO 4220</li>
-              <li>Data science/ML course</li>
-              <li>Game theory / econ modeling</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  <div className="w-screen grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
+    <div className="resource-card">
+      <h3 className="text-lg font-semibold text-red-700">🧠 Artificial Intelligence</h3>
+      <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
+        <li>CS 3700 + AI Practicum</li>
+        <li>ML/NLP elective (e.g. CS 4740, 4780)</li>
+        <li>Human intelligence or decision theory</li>
+      </ul>
+    </div>
+    <div className="resource-card">
+      <h3 className="text-lg font-semibold text-red-700">🔢 Computational Science</h3>
+      <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
+        <li>CS 4210 + 4220 (numerical methods)</li>
+        <li>Math-focused electives (e.g. MATH 4200)</li>
+        <li>4+ credits of low-level programming (CS 2022, 2043)</li>
+      </ul>
+    </div>
+    <div className="resource-card">
+      <h3 className="text-lg font-semibold text-red-700">🖼 Graphics & Vision</h3>
+      <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
+        <li>CS 4620/4670 + Practicum</li>
+        <li>ML or Game Dev electives</li>
+        <li>Art, visual perception courses (optional)</li>
+      </ul>
+    </div>
+    <div className="resource-card">
+      <h3 className="text-lg font-semibold text-red-700">🌐 Network Science</h3>
+      <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
+        <li>CS 2850 + INFO 4220</li>
+        <li>Data science/ML course</li>
+        <li>Game theory / econ modeling</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
       {/* Tools */}
       <section>

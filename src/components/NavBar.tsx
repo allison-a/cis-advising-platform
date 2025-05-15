@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navItems = [
-  { name: 'Home', path: '/' },
+  { name: 'Resources', path: '/resources' },
   // { name: 'Advising Contacts', path: '/advising' },
   { name: 'Course Planning', path: '/course-planning' },
   { name: 'FAQ', path: '/faq' },
@@ -16,7 +16,9 @@ export default function NavBar() {
   return (
     <nav className="w-full bg-white border-b shadow-sm px-6 py-4">
       <div className="w-full flex justify-between items-center px-6">
-        <span className="text-3xl font-extrabold text-red-700 tracking-tight">CISConnect</span>
+      <Link href="/" className="text-3xl font-extrabold text-red-700 tracking-tight">
+        CISConnect
+      </Link>
         <ul className="flex gap-8 text-xl font-semibold text-gray-700">
           {navItems.map((item) => (
             <li key={item.path}>
