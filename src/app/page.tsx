@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { FaLaptop, FaCommentDots, FaRegListAlt, FaFolderOpen } from 'react-icons/fa';
 
 const featured = ['engineering-handbook', 'course-plan', 'student-center'];
-const featuredResources = resources.filter(r => featured.includes(r.id));
 
 export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
