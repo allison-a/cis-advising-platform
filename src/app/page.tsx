@@ -1,15 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { FaLaptop, FaCommentDots, FaRegListAlt, FaFolderOpen } from 'react-icons/fa';
 
-
 export default function HomePage() {
-  const [showHero, setShowHero] = useState(false);
-  useEffect(() => {
-    setTimeout(() => setShowHero(true), 100);
-  }, []);
-
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-[#f7f3ef] px-4 font-sans">
       <style jsx global>{`
