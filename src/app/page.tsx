@@ -2,7 +2,7 @@
 import { resources } from '../lib/resources_data';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { FaCalendarAlt, FaLaptop, FaCommentDots, FaRegListAlt, FaFolderOpen } from 'react-icons/fa';
+import { FaLaptop, FaCommentDots, FaRegListAlt, FaFolderOpen } from 'react-icons/fa';
 
 const featured = ['engineering-handbook', 'course-plan', 'student-center'];
 const featuredResources = resources.filter(r => featured.includes(r.id));
