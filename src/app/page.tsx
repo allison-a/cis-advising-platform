@@ -1,10 +1,8 @@
 'use client';
-import { resources } from '../lib/resources_data';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaLaptop, FaCommentDots, FaRegListAlt, FaFolderOpen } from 'react-icons/fa';
 
-const featured = ['engineering-handbook', 'course-plan', 'student-center'];
 
 export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
